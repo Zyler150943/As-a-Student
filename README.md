@@ -35,6 +35,7 @@ I've participated at Hackathon and have entered to the Top-Trek programm. Very c
 | Sunday    | 10:00-14:00 | Gym |
 
 ## :pushpin: One of my first projects
+:moneybag: This is a shop on Python
 ```python
 #Магазин
 import os
