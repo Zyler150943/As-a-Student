@@ -3,7 +3,7 @@
 I'm a student of the Ural Federal University. Studying at IRIT-RTF at Programming Engineering programm.
 
 ## :bookmark: More about me :yum:
-I've participated at Hackathon and have entered to the Top-Trek programm. Very clever :star:
+I've participated at Hackathon and have entered to the Top-Track programm. Very clever :star:
 
 ## :boom: My hobbies and points of interests 
 - Programming (obviously :grin:)
