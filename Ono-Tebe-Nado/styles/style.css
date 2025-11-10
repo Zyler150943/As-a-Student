@@ -17,21 +17,47 @@ header {
 .header__menu {
     display: inline-block;
     grid-column: 1 / 2;
+    margin: 133px 36px 138px auto;
 }
 
 .header__links-list {
-    display: flex;
-    gap: 32px;
-    list-style: circle;
+    display: flex; /* Сначала использовал gap, но margin лучше отрабатывал, так как разные отступы в макете. Оставил flex для удобства */
+    list-style: none; /* Убираем "заводские" маркеры, под макет проще сделать свои через ::before: */
 }
 
-.header__links-list-item_no-bullit {
-    list-style: none;
+.header__links-list li:nth-child(2) {
+    margin-left: 13px;
+}
+
+.header__links-list li:nth-child(3) {
+    margin-left: 16px;
+}
+
+.header__links-list-item_no-bullit::before {
+    display: none;
+}
+
+.header__links-list-item {
+    position: relative; /* Создаём уникальный контекст, относительно которого будем позиционировать кастомный маркер */
+    padding-left: 19px; /* 6px (маркер) + 13px (отступ). Это позволит включить маркер в размер элемента списка.*/
+}
+
+.header__links-list-item::before {
+    content: "";
+    position: absolute; /* С помощью этого позиционируем маркер как нам надо */
+    left: 0;
+    top: 60%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 0.5px solid currentColor;
 }
 
 .header__link_active {
     text-decoration: underline;
-    text-wrap-mode: nowrap;
+    text-decoration-thickness: 0.5px;
 }
 
 .header__logo {
@@ -48,9 +74,14 @@ header {
 .header__address {
     width: 240px;
     justify-self: end;
+    margin-bottom: 4px;
     margin-right: 50px;
     font-style: normal;
     line-height: 24px;
+}
+
+.address__link {
+    text-decoration-thickness: 0.5px;
 }
 
 /* Обложка страницы */
@@ -198,6 +229,9 @@ header {
     font-weight: bold;
     text-transform: uppercase;
     text-decoration: underline;
+    text-decoration-thickness: 0.5px;
+    text-underline-offset: 0.15em;
+    text-decoration-skip-ink: none;
     color: white;
 }
 
@@ -207,6 +241,7 @@ header {
     font-size: 20px;
     font-weight: normal;
     color: white;
+    line-height: 120%;
 }
 
 .card_type_film {
@@ -234,6 +269,9 @@ header {
     font-size: 20px;
     font-weight: normal;
     text-decoration: underline;
+    text-decoration-thickness: 0.5px;
+    text-decoration-skip-ink: none;
+    text-underline-offset: 0.25em;
 }
 
 /* Секция "Об аукционе" */
@@ -264,8 +302,12 @@ header {
     width: 148px;
 }
 
+.about__column {
+    margin-right: 3px;
+}
+
 .about__column p:nth-child(2) {
-    margin-top: 6px;
+    margin-top: 8px;
     margin-bottom: 24px;
 }
 
@@ -283,6 +325,7 @@ header {
     font-family: 'Raleway',sans-serif;
     font-size: 20px;
     font-weight: normal;
+    line-height: 24px;
 }
 
 /* Подвал */
